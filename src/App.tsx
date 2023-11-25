@@ -20,8 +20,6 @@ function App() {
   };
 
   const sortedCharacters = useMemo(() => {
-    // const allCharacters = characters.flatMap((page) => page.results);
-    // console.log(allCharacters);
     return filteredCharacter
       ? characters.filter((character: Character) =>
           character.name.toLowerCase().includes(filteredCharacter.toLowerCase())
@@ -30,9 +28,7 @@ function App() {
   }, [filteredCharacter, characters]);
 
   useEffect(() => {
-    const debouncing = setTimeout(() => {
-      console.log(filteredCharacter);
-    }, 300);
+    const debouncing = setTimeout(() => {}, 300);
     return () => clearTimeout(debouncing);
   }, [filteredCharacter]);
 
